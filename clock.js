@@ -21,17 +21,18 @@ const data = {
     // 格式化时间为完整的时间字符串，精确到秒
     let timeString = `${this.year}年${this.month < 10 ? '0' + this.month : this.month}月${this.day < 10 ? '0' + this.day : this.day}日 ` +
            `${this.weekday} ` +
-           `${this.hours < 10 ? '0' + this.hours : this.hours}:${this.minutes < 10 ? '0' + this.minutes : this.minutes}:${this.seconds < 10 ? '0' + this.seconds : this.seconds}；
+           `${this.hours < 10 ? '0' + this.hours : this.hours}:${this.minutes < 10 ? '0' + this.minutes : this.minutes}:${this.seconds < 10 ? '0' + this.seconds : this.seconds}`;
 
-    // 如果分钟数为20或50，输出“站起来活动下吧！”
-    if (this.minutes === 20||this.minutes === 50) {
+    // 如果分钟数为20或40，输出“站起来活动下吧！”
+    if (this.minutes === 20 || this.minutes === 40) {
       timeString += "\n站起来活动下吧！";
     }
 
     return timeString;
   }
 };
-/ 每秒更新一次时间并显示
+
+// 每秒更新一次时间并显示
 function updateClock() {
   data.updateTime(); // 更新时间
   document.getElementById('clock').textContent = data.formatTime(); // 更新时钟显示
@@ -41,4 +42,3 @@ function updateClock() {
 updateClock();
 // 每秒更新时钟
 setInterval(updateClock, 1000); // 以秒为单位更新
-
