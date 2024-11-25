@@ -23,8 +23,8 @@ const data = {
            `${this.weekday} ` +
            `${this.hours < 10 ? '0' + this.hours : this.hours}:${this.minutes < 10 ? '0' + this.minutes : this.minutes}:${this.seconds < 10 ? '0' + this.seconds : this.seconds}；
 
-    // 如果分钟数为20或40，输出“站起来活动下吧！”
-    if (this.minutes === 20||this.minutes === 40) {
+    // 如果分钟数为20或50，输出“站起来活动下吧！”
+    if (this.minutes === 20||this.minutes === 50) {
       timeString += "\n站起来活动下吧！";
     }
 
